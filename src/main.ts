@@ -10,7 +10,15 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Bank Ledger API')
-    .setDescription('Сервис банковских счетов и транзакционных переводов')
+    .setDescription(`
+### Тестовый доступ:
+* **Администратор (полный доступ, RBAC):**
+  * **Email:** \`admin@bank.ru\`
+  * **Пароль:** \`adminSecret2026\`
+* **Клиент:** создаётся через эндпоинт \`POST /users/register\`
+
+> Для выполнения запросов с ролью ADMIN выполните **POST /auth/login** с указанными данными, скопируйте \`access_token\` и вставьте его в кнопку **Authorize** в правом верхнем углу.
+    `)
     .setVersion('1.0')
     .addBearerAuth()
     .build();
